@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  height: 100vh;
+}
+
+
+
+/* input and label */
+.wrapper {
+  padding: 30px;
+}
+
+.wrapper .input-field {
+  height: 40px;
+  position: relative;
+}
+
+.wrapper .input-field input {
+  width: 80%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid silver;
+  font-size: 17px;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: gray;
+}
+.wrapper .input-field label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: black;
+  font-size: 15px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* icon */
+.bi-person-vcard {
+  margin-right: 10px;
+
+}
+
+.wrapper .input-field .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 80%;
+}
+
+.input-field .underline::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: tomato;
+  transform: scaleX(0);
+  transition: transform .3s ease;
+}
+
+
+.input-field input:focus ~ .underline::before ,
+ .input-field input:valid ~ .underline::before {
+    transform: scaleX(1);
+}
+
+.wrapper .input-field .btn {
+    position: absolute;
+    background-color: tomato;
+    color: antiquewhite;
+    margin-left: 10px;
+    box-shadow: 6px 6px 3px 1px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+ul#menu {
+    list-style: none;
+}
+
+ul#menu li {
+    margin: 8px 0;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+ul#menu li span {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+ul#menu li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: gray;
+    transition: .5s all ease-in-out;
+}
+
+ul#menu li:nth-child(2):before {
+    background-color: tomato;
+}
+
+ul#menu li:hover:before {
+    border-radius: 0 50px 50px 0;
+    width: 100%;
+}
+
+.next-page {
+    display: flex;
+    justify-content: center;
+}
